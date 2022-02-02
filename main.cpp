@@ -7,7 +7,6 @@
 #include <stdint.h>
 
 #include "IIR_filter.h"
-#include "rt_loop.h"
 
 DigitalOut led(LED1);
 
