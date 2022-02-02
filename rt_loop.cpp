@@ -1,4 +1,8 @@
 #include "rt_loop.h"
+#include "mbed.h"
+
+extern DigitalOut led;
+
 
 rt_loop::rt_loop(float Ts)
 {
@@ -12,8 +16,7 @@ void rt_loop::theloop(void)
     {
         ThisThread::flags_wait_any(threadFlag);
         // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-        printf(".");    
-    
+        led = !led;
     }
 }
 

@@ -19,5 +19,4 @@ private:
     void sendSignal();
     Timer ti;
     float Ts;
-
 };
