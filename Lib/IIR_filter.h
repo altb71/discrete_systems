@@ -26,4 +26,5 @@ private:
     float *B;
     float *A;
     uint8_t nb,na;
+    float b0,a0,y_old;
 };

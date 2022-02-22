@@ -21,7 +21,16 @@ int main()
         /* stop bit */ 1);
     serial_port.set_blocking(false);
     printf("Start loop\n");
-    
+    const int N = 100;
+    float y[N];
+    float u[N];
+    IIR_filter LP(.1,0.01);
+    for(uint16_t k = 0;k<N;k++)
+        u[k] = 1*(k>=10);           // step response, set first 10 values =0
+    for(uint16_t k = 0;k<N;k++)
+        y[k] = LP(u[k]);
+    for(uint16_t k = 0;k<N;k++)
+        printf("%2.4f %2.4f\r\n",u[k],y[k]);
     while(1) 
     ;    
     
