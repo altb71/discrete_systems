@@ -16,16 +16,11 @@ static BufferedSerial serial_port(USBTX, USBRX);
 
 int main()
 {    serial_port.set_baud(115200);
-    serial_port.set_format(
-        /* bits */ 8,
-        /* parity */ BufferedSerial::None,
-        /* stop bit */ 1);
+    serial_port.set_format(8, BufferedSerial::None, 1);
     serial_port.set_blocking(false);
     printf("Start loop\n");
     rt_loop my_loop(.10);
     my_loop.start_theloop();
     while(1) 
     ;    
-    
-
 }
