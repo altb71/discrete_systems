@@ -7,12 +7,10 @@
 #include <stdint.h>
 
 #include "IIR_filter.h"
-
 static BufferedSerial serial_port(USBTX, USBRX);
 // main program
-
 int main()
-{    serial_port.set_baud(115200);
+{  
     serial_port.set_format(8, BufferedSerial::None, 1);
     serial_port.set_blocking(false);
     const int N = 100;
