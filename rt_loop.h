@@ -3,7 +3,8 @@
 #include "mbed.h"
 #include "Signal.h"
 #include "ThreadFlag.h"
-
+#include "IIR_filter.h"
+#include "LinearCharacteristics.h"
 class rt_loop
 {
 public:
@@ -19,4 +20,6 @@ private:
     void sendSignal();
     Timer ti;
     float Ts;
+    IIR_filter dif1,dif2;
+    LinearCharacteristics i2u;      // define LC to map currents to the analog output
 };
